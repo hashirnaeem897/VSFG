@@ -1,0 +1,209 @@
+@import "../../styles/breakpoint";
+
+.main {
+  display: flex;
+  background-color: var(--secondarybackground);
+  height: 80px;
+  width: 100%;
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  @include lg {
+    height: 60px;
+  }
+  @include xxl {
+    height: 80px;
+  }
+}
+
+.container {
+  max-width: 1536px;
+  margin-inline: auto;
+  width: 100%;
+  padding-inline: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &_logo {
+    width: 130px;
+    height: 60px;
+    position: relative;
+    img {
+      object-fit: contain;
+    }
+  }
+}
+
+.menubutton {
+  height: 40px;
+  width: 40px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  &[data-active="true"] {
+    div {
+      div {
+        transform: translateX(-100px);
+        opacity: 0;
+      }
+      &::after {
+        transform: rotate(45deg);
+      }
+      &::before {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  &_button {
+    position: relative;
+    display: block;
+    height: 3px;
+    width: 100%;
+    border-radius: 999px;
+    transition: 0.4s all;
+    div {
+      position: absolute;
+      background-color: var(--light);
+      height: 3px;
+      width: 100%;
+      border-radius: 999px;
+      transition: 0.4s all;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: var(--light);
+      height: 3px;
+      width: 100%;
+      border-radius: 999px;
+      transform: translateY(-12px);
+      transition: 0.4s all;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: var(--light);
+      height: 3px;
+      width: 100%;
+      border-radius: 999px;
+      transform: translateY(12px);
+      transition: 0.4s all;
+    }
+  }
+}
+
+.menu {
+  position: fixed;
+  background-color: var(--secondarybackground);
+  width: 100%;
+  z-index: 8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 20px;
+  top: -100%;
+  transition: 0.5s all;
+  height: 100%;
+  &[data-active="true"] {
+    top: 80px;
+    @include lg {
+      top: 60px;
+    }
+    @include xxl {
+      top: 80px;
+    }
+  }
+  h5 {
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.8rem;
+    line-height: calc(1.8rem * 1.4);
+    font-family: var(--stencil);
+    @include lg {
+      font-size: 2rem;
+      line-height: calc(2rem * 1.4);
+    }
+    &:hover {
+      color: var(--accent);
+    }
+  }
+  button {
+    all: unset;
+    text-align: center;
+    cursor: pointer;
+    font-size: 1.8rem;
+    line-height: calc(1.8rem * 1.4);
+    font-family: var(--stencil);
+    font-weight: 900;
+    @include lg {
+      font-size: 2rem;
+      line-height: calc(2rem * 1.4);
+    }
+    &:hover {
+      color: var(--accent);
+    }
+  }
+}
+
+.pop {
+  position: relative;
+  &_flex {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+    div {
+      height: 30px;
+      width: 30px;
+      @include lg {
+        height: 2.5rem;
+        width: 2.5rem;
+      }
+    }
+    svg {
+      transform: scale(1);
+      cursor: pointer;
+      border: 1px solid var(--light);
+      border-radius: 999px;
+      padding: 5px;
+      transition: 0.3s all;
+      font-size: 1.8rem;
+      @include lg {
+        font-size: 2.5rem;
+      }
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+  &_box {
+    background-color: var(--accent);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: -130px;
+    padding: 10px;
+    border-radius: 20px;
+    gap: 1rem;
+    transform: translateX(-50%);
+    left: 50%;
+    width: fit-content;
+    height: fit-content;
+    h6 {
+      cursor: pointer;
+      font-size: 1.8rem;
+      line-height: calc(1.8rem * 1.4);
+      transition: 0.3s all;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

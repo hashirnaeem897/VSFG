@@ -1,0 +1,156 @@
+@import "../../styles/breakpoint";
+
+.main {
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  background-color: var(--secondarybackground);
+  z-index: 5;
+  position: relative;
+  @include lg {
+    height: 250px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.container {
+  max-width: 1536px;
+  width: 100%;
+  margin-inline: auto;
+  display: flex;
+  // align-items: center;
+  padding-inline: 20px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding-block: 1rem;
+  @include lg {
+    padding-block: 0px;
+    flex-direction: row;
+  }
+  &_logo {
+    position: relative;
+    min-height: 50px;
+    height: 50px;
+    width: 50px;
+    @include lg {
+      transform: translateY(-25px);
+      height: 100px;
+      width: 100px;
+    }
+    img {
+      object-fit: contain;
+    }
+  }
+}
+
+.grid {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  // margin-inline: 1rem;
+  gap: 0.5rem;
+
+  padding-block: 1rem;
+  flex-direction: column;
+  @include lg {
+    border-bottom: 2px solid var(--light);
+    flex-direction: row;
+    padding: 1.2rem 2rem 1.2rem 2rem;
+    align-self: flex-end;
+    border-bottom: none;
+    border-top: 2px solid var(--light);
+  }
+  h5 {
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: calc(1rem * 1.5);
+    font-family: var(--stencil);
+    @include lg {
+      font-size: 1.563rem;
+      line-height: calc(1.563rem * 1.4);
+    }
+    &:hover {
+      color: var(--accent);
+    }
+  }
+  button {
+    all: unset;
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: calc(1rem * 1.5);
+    font-family: var(--stencil);
+    font-weight: 900;
+    @include lg {
+      font-size: 1.563rem;
+      line-height: calc(1.563rem * 1.4);
+    }
+    &:hover {
+      color: var(--accent);
+    }
+  }
+}
+
+.pop {
+  position: relative;
+  &_flex {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+    div {
+      height: 30px;
+      width: 30px;
+      @include lg {
+        height: 2.5rem;
+        width: 2.5rem;
+      }
+    }
+    svg {
+      transform: scale(1);
+      cursor: pointer;
+      border: 1px solid var(--light);
+      border-radius: 999px;
+      padding: 5px;
+      transition: 0.3s all;
+      font-size: 1.8rem;
+      @include lg {
+        font-size: 2.5rem;
+      }
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+  &_box {
+    background-color: var(--accent);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    padding: 10px;
+    border-radius: 20px;
+    gap: 1rem;
+    width: fit-content;
+    height: fit-content;
+    transform-origin: center;
+    // transform: translateX(-80%);
+    top: -130px;
+    @include lg {
+      transform: translateX(-50%);
+      top: -150px;
+      left: -50%;
+      transform-origin: right;
+    }
+    h6 {
+      cursor: pointer;
+      font-size: 1.8rem;
+      line-height: calc(1.8rem * 1.4);
+      transition: 0.3s all;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

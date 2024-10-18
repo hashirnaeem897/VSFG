@@ -1,0 +1,190 @@
+@import "./breakpoint";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+@font-face {
+  font-family: "Sofia";
+  src: url("/font/sofia-extra.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Stencil";
+  src: url("/font/sofia-extra.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --primary: #110e66;
+  --primaryDark: #030023;
+  --backgroundDark: #050227;
+  --background: #05012a;
+  --accent: #b65518;
+  --light: #ffffff;
+  --secondarybackground: #040035;
+  --gray: #878697;
+}
+
+html,
+body {
+  height: 100%;
+  color: var(--light);
+}
+
+.canvas {
+  position: fixed;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 4;
+}
+
+section,
+footer {
+  scroll-snap-align: center;
+}
+
+body {
+  font-family: "Sofia";
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--background);
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: var(--light);
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+#__next {
+  isolation: isolate;
+}
+
+h1 {
+  font-family: "Stencil";
+  font-size: 3.8rem;
+  line-height: calc(3.8rem * 1.2);
+  @include xxl {
+    font-size: 4.8rem;
+    line-height: calc(4.8rem * 1.2);
+  }
+}
+
+h2 {
+  font-family: "Stencil";
+  font-size: 2.5rem;
+  line-height: calc(2.5rem * 1.2);
+
+  @include xxl {
+    font-size: 3.25rem;
+    line-height: calc(3.25rem * 1.2);
+  }
+  &[data-small] {
+    font-size: 1.41rem;
+    line-height: calc(1.41rem * 1.2);
+    @include md {
+      font-size: 1.8rem;
+      line-height: calc(1.8rem * 1.2);
+    }
+    @include lg {
+      font-size: 2.3rem;
+      line-height: calc(2.3rem * 1.2);
+    }
+    @include xxl {
+      font-size: 3.25rem;
+      line-height: calc(3.25rem * 1.2);
+    }
+  }
+}
+
+h3 {
+  font-family: "Sofia";
+  font-size: 1.2rem;
+  line-height: calc(1.2rem * 1.5);
+  @include md {
+    font-size: 1.4rem;
+    line-height: calc(1.4rem * 1.4);
+  }
+  @include lg {
+    font-size: 1.5rem;
+    line-height: calc(1.5rem * 1.4);
+  }
+  @include xxl {
+    font-size: 2rem;
+    line-height: calc(2rem * 1.3);
+  }
+}
+
+h4 {
+  font-family: "Stencil";
+  font-size: 1.4rem;
+  line-height: calc(1.4rem * 1.4);
+  @include xxl {
+    font-size: 1.8rem;
+    line-height: calc(1.8rem * 1.4);
+  }
+}
+
+p {
+  font-family: "Sofia";
+  font-size: 1rem;
+  line-height: calc(1rem * 1.5);
+  @include xxl {
+    font-size: 1.2rem;
+    line-height: calc(1.2rem * 1.4);
+  }
+  &[data-small] {
+    font-size: 0.8rem;
+    line-height: calc(0.8rem * 1.5);
+    @include lg {
+      font-size: 1rem;
+      line-height: calc(1rem * 1.5);
+    }
+    @include xxl {
+      font-size: 1.2rem;
+      line-height: calc(1.2rem * 1.4);
+    }
+  }
+}
+
+.hide {
+  overflow: hidden;
+  height: fit-content;
+  width: fit-content;
+}

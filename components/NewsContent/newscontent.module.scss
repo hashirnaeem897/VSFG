@@ -1,0 +1,31 @@
+@import "../../styles/breakpoint";
+
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 20px;
+  padding-top: 100px;
+  gap: 2rem;
+  &_img {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 20px;
+    @include md {
+      height: 450px;
+    }
+    @include lg {
+      height: 550px;
+    }
+    @include xxl {
+      height: 650px;
+    }
+    img {
+      object-fit: cover;
+    }
+  }
+}

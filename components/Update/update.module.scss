@@ -1,0 +1,126 @@
+@import "../../styles/breakpoint";
+
+.main {
+  min-height: 90vh;
+  background-color: var(--backgroundDark);
+  position: relative;
+  display: flex;
+  align-items: center;
+  @include lg {
+    min-height: 100vh;
+  }
+  @include xxl {
+    min-height: 100vh;
+  }
+  &_shade {
+    background-image: url("/updatebackground.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.container {
+  max-width: 1536px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  z-index: 5;
+  padding: 20px;
+  position: relative;
+  width: 100%;
+  h4 {
+    color: var(--accent);
+  }
+  @include lg {
+    gap: 1.6rem;
+  }
+  @include xxl {
+    gap: 2rem;
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  cursor: pointer;
+  @include lg {
+    margin-left: 10rem;
+  }
+  &:hover {
+    h3 {
+      background-size: 100% 1px;
+    }
+    img {
+      transform: scale(1.2);
+    }
+  }
+  h3 {
+    width: fit-content;
+    background-image: linear-gradient(
+      90deg,
+      var(--light) 0%,
+      var(--light) 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    background-position: left bottom;
+    transition: 0.4s all;
+  }
+
+  &_img {
+    border-radius: 0.4rem;
+    overflow: hidden;
+    position: relative;
+    height: 235px;
+    width: 100%;
+    img {
+      transition: 0.4s all;
+      object-fit: cover;
+    }
+    @include md {
+      height: 465px;
+    }
+    @include lg {
+      height: 365px;
+      width: 600px;
+    }
+  }
+}
+
+.button {
+  position: absolute;
+  right: 20px;
+  bottom: -10px;
+  cursor: pointer;
+  @include md {
+    bottom: -30px;
+  }
+  @include lg {
+    bottom: 0;
+  }
+  @include xxl {
+    bottom: -100px;
+  }
+  p {
+    transform: translateY(10px);
+    transition: 0.3s all;
+  }
+  svg {
+    transition: 0.3s all;
+  }
+  &:hover {
+    p {
+      transform: scale(1.1);
+    }
+    svg {
+      transform: scaleX(1.2);
+    }
+  }
+}
